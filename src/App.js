@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
 import AddProduct from './pages/AddProduct'
 import EditProduct from './pages/EditProduct'
 import ProductList from './pages/ProductList'
+import CRUDList from './pages/CRUDList'
 
 import { Provider } from 'react-redux'
 import { createStore, compose } from 'redux'
@@ -25,6 +26,9 @@ class App extends React.Component {
             </div>
             <div className='content'>
               <div className='sidenav'>
+                <Link to='/crud' className='link'>
+                  Mantenimientos
+                </Link>
                 <Link to='/' className='link'>
                   Product List
                 </Link>
@@ -37,6 +41,7 @@ class App extends React.Component {
                   <Route path='/' component={ProductList} exact />
                   <Route path='/add' component={AddProduct} exact />
                   <Route path='/edit/:id' component={EditProduct} exact />
+                  <Route path='/crud' component={CRUDList} exact />
                 </Switch>
               </div>
             </div>
